@@ -25,5 +25,6 @@ int main(int argc, char * argv[]) {
     fclose(fp1);
     printf("File %s has %lu characters\n", argv[1], count);
 
+    printf("Hello, World!\n");
     return 0;
 }

@@ -1,30 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "banner.h"
+#include "utils.h"
 
 int main(int argc, char * argv[]) {
-    int ch;
-    FILE *fp1;
-    unsigned long count = 0;
+    int choice;
+    printBanner();
+    printOption();
 
-    if (argc != 2) {
-        printf("Usage: %s filename\n", argv[0]);
-        exit(EXIT_FAILURE);
+    
+    while (1) {
+        printf("Input your option: ");
+        scanf("%d", &choice);
+
+        switch (choice){
+            case 1:
+                backup();
+                break;
+            case 2:
+                restore();
+                break;
+            case 3:
+                sw2OffiS();
+                break;
+            case 4:
+                sw2BiliS();
+                break;
+            case 5:
+                exitProgram();
+            default:
+                puts("Invalid option. Please try again.");
+                break;
+            }
+
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF);
     }
 
-    if ((fp1 = fopen(argv[1], "r")) == NULL) {
-        printf("Can not open file %s\n", argv[1]);
-        exit(EXIT_FAILURE);
-    }
-
-
-    while ((ch = getc(fp1)) != EOF) {
-        putc(ch, stdout);
-        count ++;
-    }
-
-    fclose(fp1);
-    printf("File %s has %lu characters\n", argv[1], count);
-
-    printf("Hello, World!\n");
-    return 0;
+        return 0;
 }

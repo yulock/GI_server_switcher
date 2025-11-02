@@ -1,8 +1,7 @@
 build/
 bin/
+.vscode/
 *.exe
 *.o
 *.obj
 *.pdb
-
-.vscode

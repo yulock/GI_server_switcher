@@ -8,6 +8,8 @@ set(CMAKE_C_STANDARD 11)
 include_directories(src)
 
 add_executable(main 
-    main.c
+    src/main.c
+    src/banner.c
+    src/utils.c
 )
 
